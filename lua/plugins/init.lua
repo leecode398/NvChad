@@ -170,17 +170,17 @@ local plugins = {
    ["nvim-telescope/telescope.nvim"] = {
       cmd = "Telescope",
       config = function()
-         require "plugins.configs.telescope"
+        require "plugins.configs.telescope"
       end,
-   },
+    },
 
-   -- Only load whichkey after all the gui
-   ["folke/which-key.nvim"] = {
+    -- Only load whichkey after all the gui
+    ["folke/which-key.nvim"] = {
       module = "which-key",
       config = function()
-         require "plugins.configs.whichkey"
+        require "plugins.configs.whichkey"
       end,
-   },
-}
+    },
+  }
 
-require("core.packer").run(plugins)
+  require("core.packer").run(plugins)
