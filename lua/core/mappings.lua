@@ -9,6 +9,8 @@ local M = {}
 M.general = {
 
    i = {
+      ["jj"] = {"<ESC>", "esc"},
+      ["jk"] = {"<ESC> <cmd> w <CR>", "esc save"},
 
       -- go to  beginning and end
       ["<C-b>"] = { "<ESC>^i", "論 beginning of line" },
@@ -22,6 +24,9 @@ M.general = {
    },
 
    n = {
+      ["q"] = {"<cmd> q <CR>", "quit"},
+      ["H"] = {"^", "beginning"},
+      ["L"] = {"$", "ending"},
 
       ["<ESC>"] = { "<cmd> noh <CR>", "  no highlight" },
 
@@ -51,6 +56,11 @@ M.general = {
 
          "   toggle theme",
       },
+   },
+
+   v = {
+      ["H"] = {"^", "beginning"},
+      ["L"] = {"$", "ending"},
    },
 
    t = {
@@ -242,10 +252,10 @@ M.nvimtree = {
 M.telescope = {
    n = {
       -- find
-      ["<leader>ff"] = { "<cmd> Telescope find_files <CR>", "  find files" },
+      ["<C-p>"] = { "<cmd> Telescope find_files <CR>", "  find files" },
       ["<leader>fa"] = { "<cmd> Telescope find_files follow=true no_ignore=true hidden=true <CR>", "  find all" },
       ["<leader>fw"] = { "<cmd> Telescope live_grep <CR>", "   live grep" },
-      ["<leader>fb"] = { "<cmd> Telescope buffers <CR>", "  find buffers" },
+      ["<C-b>"] = { "<cmd> Telescope buffers <CR>", "  find buffers" },
       ["<leader>fh"] = { "<cmd> Telescope help_tags <CR>", "  help page" },
       ["<leader>fo"] = { "<cmd> Telescope oldfiles <CR>", "   find oldfiles" },
       ["<leader>tk"] = { "<cmd> Telescope keymaps <CR>", "   show keys" },
