@@ -59,6 +59,15 @@ local options = {
    },
 
    extensions_list = { "themes", "terms" },
+   pickers = {
+       buffers = {
+           ignore_current_buffer = true,
+            sort_lastused = true,
+       },
+       find_files = {
+           no_ignore = true,
+       },
+   },
 }
 
 -- check for any override

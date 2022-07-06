@@ -9,8 +9,8 @@ local M = {}
 M.general = {
 
    i = {
-      ["jj"] = {"<ESC>", "esc"},
-      ["jk"] = {"<ESC> <cmd> w <CR>", "esc save"},
+      ["jj"] = { "<ESC> = ", "esc" },
+      ["jk"] = { "<ESC> <cmd> w<CR>", "esc save" },
 
       -- go to  beginning and end
       ["<C-b>"] = { "<ESC>^i", "論 beginning of line" },
@@ -24,9 +24,11 @@ M.general = {
    },
 
    n = {
-      ["q"] = {"<cmd> q <CR>", "quit"},
-      ["H"] = {"^", "beginning"},
-      ["L"] = {"$", "ending"},
+      ["q"] = { "<cmd> q <CR>", "quit" },
+      ["H"] = { "^", "beginning" },
+      ["L"] = { "$", "ending" },
+      ["<leader>k"] = { "<Plug>MarkSet", "mark" },
+      ["<leader>a"] = { "<cmd> Rg <C-R><C-W><cr>", "rg" },
 
       ["<ESC>"] = { "<cmd> noh <CR>", "  no highlight" },
 
@@ -43,7 +45,7 @@ M.general = {
       ["<C-c>"] = { "<cmd> %y+ <CR>", "  copy whole file" },
 
       -- line numbers
-      ["<leader>n"] = { "<cmd> set nu! <CR>", "   toggle line number" },
+      -- ["<leader>n"] = { "<cmd> set nu! <CR>", "   toggle line number" },
       ["<leader>rn"] = { "<cmd> set rnu! <CR>", "   toggle relative number" },
 
       -- update nvchad
@@ -59,12 +61,14 @@ M.general = {
    },
 
    v = {
-      ["H"] = {"^", "beginning"},
-      ["L"] = {"$", "ending"},
+      ["H"] = { "^", "beginning" },
+      ["L"] = { "$", "ending" },
    },
 
    t = {
       ["<C-x>"] = { termcodes "<C-\\><C-N>", "   escape terminal mode" },
+      ["H"] = { "^", "beginning" },
+      ["L"] = { "$", "ending" },
    },
 }
 
@@ -214,6 +218,12 @@ M.lspconfig = {
          end,
          "   lsp formatting",
       },
+      ["="] = {
+         function()
+            vim.lsp.buf.formatting()
+         end,
+         "   lsp formatting",
+      },
 
       ["<leader>wa"] = {
          function()
@@ -236,23 +246,38 @@ M.lspconfig = {
          "   list workspace folders",
       },
    },
+   v = {
+      ["="] = {
+         function()
+            vim.lsp.buf.formatting()
+         end,
+         "   lsp formatting",
+      },
+   },
 }
 
 M.nvimtree = {
 
    n = {
       -- toggle
-      ["<C-n>"] = { "<cmd> NvimTreeToggle <CR>", "   toggle nvimtree" },
+      [";a"] = { "<cmd> NvimTreeToggle <CR>", "   toggle nvimtree" },
 
       -- focus
-      ["<leader>e"] = { "<cmd> NvimTreeFocus <CR>", "   focus nvimtree" },
+      [";e"] = { "<cmd> NvimTreeFocus <CR>", "   focus nvimtree" },
    },
 }
 
 M.telescope = {
+   i = {
+      ["<C-j>"] = { "<Down>", " move down" },
+      ["<C-k>"] = { "<Up>", " move up" },
+   },
    n = {
       -- find
-      ["<C-p>"] = { "<cmd> Telescope find_files <CR>", "  find files" },
+      ["<C-p>"] = {
+         "<cmd> Telescope find_files find_command=rg,--ignore,--files prompt_prefix= <CR>",
+         "  find files",
+      },
       ["<leader>fa"] = { "<cmd> Telescope find_files follow=true no_ignore=true hidden=true <CR>", "  find all" },
       ["<leader>fw"] = { "<cmd> Telescope live_grep <CR>", "   live grep" },
       ["<C-b>"] = { "<cmd> Telescope buffers <CR>", "  find buffers" },
