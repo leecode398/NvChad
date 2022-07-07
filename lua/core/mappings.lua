@@ -275,7 +275,7 @@ M.telescope = {
    n = {
       -- find
       ["<C-p>"] = {
-         "<cmd> Telescope find_files find_command=rg,--ignore,--files prompt_prefix= <CR>",
+         "<cmd> Telescope find_files find_command=rg,--ignore,--hidden,--files prompt_prefix= <CR>",
          "  find files",
       },
       ["<leader>fa"] = { "<cmd> Telescope find_files follow=true no_ignore=true hidden=true <CR>", "  find all" },

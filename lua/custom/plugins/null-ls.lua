@@ -10,7 +10,7 @@ local sources = {
 
    -- webdev stuff
    b.formatting.deno_fmt,
-   b.formatting.prettier.with { filetypes = { "html", "markdown", "css" } },
+   b.formatting.prettier.with { filetypes = { "html", "markdown", "css", "yaml" } },
 
    -- Lua
    b.formatting.stylua,
@@ -21,14 +21,14 @@ local sources = {
 
    -- cpp
    b.formatting.clang_format,
-
+   b.formatting.clang_format.with { filetypes = { "c", "cpp", "proto" } },
    -- go
    b.formatting.gofumpt,
    b.formatting.goimports,
    -- b.formatting.golines,
 
    -- protobuf
-   b.formatting.buf,
+   -- b.formatting.buf,
 }
 
 null_ls.setup {
