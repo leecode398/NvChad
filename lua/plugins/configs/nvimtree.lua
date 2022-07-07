@@ -82,4 +82,10 @@ local options = {
 -- check for any override
 options = require("core.utils").load_override(options, "kyazdani42/nvim-tree.lua")
 
+-- 退出buffer自动退出nvim-tree
+vim.api.nvim_create_autocmd("BufEnter", {
+   command = "if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif",
+   nested = true,
+})
+
 nvimtree.setup(options)
