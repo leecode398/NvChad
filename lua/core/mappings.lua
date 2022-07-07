@@ -9,7 +9,7 @@ local M = {}
 M.general = {
 
    i = {
-      ["jj"] = { "<ESC> = ", "esc" },
+      ["jj"] = { "<ESC> ", "esc" },
       ["jk"] = { "<ESC> <cmd> w<CR>", "esc save" },
 
       -- go to  beginning and end

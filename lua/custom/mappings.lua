@@ -41,7 +41,11 @@ M.lspconfig = {
          end,
          "   lsp definition",
       },
-    }
-  }
+   },
+}
+
+local mapx = require "mapx"
+mapx.map("H", "^")
+mapx.map("L", "$")
 
 return M

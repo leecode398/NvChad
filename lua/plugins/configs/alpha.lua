@@ -37,17 +37,10 @@ end
 local options = {}
 
 local ascii = {
-   "   ⣴⣶⣤⡤⠦⣤⣀⣤⠆     ⣈⣭⣿⣶⣿⣦⣼⣆          ",
-   "    ⠉⠻⢿⣿⠿⣿⣿⣶⣦⠤⠄⡠⢾⣿⣿⡿⠋⠉⠉⠻⣿⣿⡛⣦       ",
-   "          ⠈⢿⣿⣟⠦ ⣾⣿⣿⣷    ⠻⠿⢿⣿⣧⣄     ",
-   "           ⣸⣿⣿⢧ ⢻⠻⣿⣿⣷⣄⣀⠄⠢⣀⡀⠈⠙⠿⠄    ",
-   "          ⢠⣿⣿⣿⠈    ⣻⣿⣿⣿⣿⣿⣿⣿⣛⣳⣤⣀⣀   ",
-   "   ⢠⣧⣶⣥⡤⢄ ⣸⣿⣿⠘  ⢀⣴⣿⣿⡿⠛⣿⣿⣧⠈⢿⠿⠟⠛⠻⠿⠄  ",
-   "  ⣰⣿⣿⠛⠻⣿⣿⡦⢹⣿⣷   ⢊⣿⣿⡏  ⢸⣿⣿⡇ ⢀⣠⣄⣾⠄   ",
-   " ⣠⣿⠿⠛ ⢀⣿⣿⣷⠘⢿⣿⣦⡀ ⢸⢿⣿⣿⣄ ⣸⣿⣿⡇⣪⣿⡿⠿⣿⣷⡄  ",
-   " ⠙⠃   ⣼⣿⡟  ⠈⠻⣿⣿⣦⣌⡇⠻⣿⣿⣷⣿⣿⣿ ⣿⣿⡇ ⠛⠻⢷⣄ ",
-   "      ⢻⣿⣿⣄   ⠈⠻⣿⣿⣿⣷⣿⣿⣿⣿⣿⡟ ⠫⢿⣿⡆     ",
-   "       ⠻⣿⣿⣿⣿⣶⣶⣾⣿⣿⣿⣿⣿⣿⣿⣿⡟⢀⣀⣤⣾⡿⠃     ",
+   "███████████████████",
+   "█▄─▄███▄─▄▄─█▄─▄▄─█",
+   "██─██▀██─▄█▀██─▄█▀█",
+   "█▄▄▄▄▄█▄▄▄▄▄█▄▄▄▄▄█",
 }
 
 options.header = {
@@ -62,12 +55,12 @@ options.header = {
 options.buttons = {
    type = "group",
    val = {
-      button("SPC f f", "  Find File  ", ":Telescope find_files<CR>"),
-      button("SPC f o", "  Recent File  ", ":Telescope oldfiles<CR>"),
-      button("SPC f w", "  Find Word  ", ":Telescope live_grep<CR>"),
-      button("SPC b m", "  Bookmarks  ", ":Telescope marks<CR>"),
-      button("SPC t h", "  Themes  ", ":Telescope themes<CR>"),
-      button("SPC e s", "  Settings", ":e $MYVIMRC | :cd %:p:h <CR>"),
+      button(", f f", "  Find File  ", ":Telescope find_files<CR>"),
+      button(", f o", "  Recent File  ", ":Telescope oldfiles<CR>"),
+      button(", f w", "  Find Word  ", ":Telescope live_grep<CR>"),
+      button(", b m", "  Bookmarks  ", ":Telescope marks<CR>"),
+      button(", t h", "  Themes  ", ":Telescope themes<CR>"),
+      button(", e s", "  Settings", ":e $MYVIMRC | :cd %:p:h <CR>"),
    },
    opts = {
       spacing = 1,
